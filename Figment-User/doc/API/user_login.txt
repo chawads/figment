@@ -1,0 +1,57 @@
+==============================================================================
+Sample Request
+==============================================================================
+
+{
+    "comm_msg" : {
+        "tran_session" : {
+		    "session_id"           : "SID0000000001",      
+            "session_url"          : "/user/login" 
+        },
+        "user_session" : {       
+            "session_id"           : "0", 
+            "user_id"              : "0" 
+        },
+        "app_data" : {
+            "user_id"              : "510720",
+            "password"             : "user_entry"
+        }
+    }
+}
+
+==============================================================================
+Sample Response
+==============================================================================
+
+{
+    "comm_msg" : {
+        "request_session_id"       : "SID0000000001"
+        "user_session" : {
+            "session_id"           : "1420486849893001", 
+            "user_id"              : "9999999999"
+        },
+        "session_response"         : {
+            "status"               : "error",
+			"status_id"            : "authentication_failed",
+            "user_msg"             : "Invalid ID or Password.",
+            "app_data"             : {}
+        }
+    }
+}
+
+==============================================================================
+Probable Status, Ids and linked actions
+==============================================================================
+{
+    "error" : {
+	    "authentication_failed" : {
+		    "action"                : "show_user_msg"	
+		}
+	},
+	
+	"ok" : {
+	    "successful" : {
+		    "action"                : "redirect_to_homepage"
+		}
+	}
+}
